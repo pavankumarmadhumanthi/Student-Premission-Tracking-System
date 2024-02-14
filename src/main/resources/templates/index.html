@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Webpage</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .ribbon {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-search-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        .nav-buttons {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-buttons li {
+            margin-right: 15px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #555;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            padding: 8px 15px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Added styles for the sections and footer */
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .sections-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .login-form {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ribbon">
+        <h1>Your Website</h1>
+    </div>
+
+    <div class="nav-search-container">
+        <ul class="nav-buttons">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">News</a></li>
+            <li>
+                <select id="userTypeSelector">
+                    <option value="studentloginform.html" class="btn btn-primary">Student</option>
+                    <option value="counsellorloginform.html">Counsellor</option>
+                    <option value="adminloginform.html">Admin</option>
+                </select>
+            </li>
+        </ul>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">Search</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="sections-container">
+            <section id="section1">
+                <h2>Section 1</h2>
+                <!-- Add your main content here -->
+            </section>
+
+            <section id="section2">
+                <h2>Section 2</h2>
+                <!-- Add content for Section 2 here -->
+            </section>
+
+            <section id="loginForm" class="login-form">
+                <h2>Login Form</h2>
+                <!-- Add your login form here -->
+                <form action="login.php" method="post">
+                    <!-- Your login form fields go here -->
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Your Website. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('userTypeSelector').addEventListener('change', function () {
+            var selectedValue = this.value;
+            var loginFormSection = document.getElementById('loginForm');
+            var section1 = document.getElementById('section1');
+            var section2 = document.getElementById('section2');
+
+            // Show or hide login form based on the selected value
+            if (selectedValue === 'index2.html') {
+                loginFormSection.style.display = 'block';
+                section1.style.display = 'none';
+                section2.style.display = 'none';
+            } else {
+                loginFormSection.style.display = 'none';
+                section1.style.display = 'block';
+                section2.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
